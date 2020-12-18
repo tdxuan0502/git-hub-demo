@@ -15,23 +15,26 @@ public class testquicksort {
         }
     }
 
-    public static void quicksort(int M[],int left ,int right){
-        if(left>=right) return ;
-        int pirot = M[(left+right)/2];
-        int i=left,j=right;
-        do{
-            while(M[i]<pirot) i++;
-            while(M[j]>pirot) j--;
-            if(i<=j){
-                int temp=M[i];
-                M[i]=M[j];
-                M[j]=temp;
+    public static void quicksort(int M[], int left, int right) {
+        if (left >= right)
+            return;
+        int pirot = M[(left + right) / 2];
+        int i = left, j = right;
+        do {
+            while (M[i] < pirot)
+                i++;
+            while (M[j] > pirot)
+                j--;
+            if (i <= j) {
+                int temp = M[i];
+                M[i] = M[j];
+                M[j] = temp;
                 i++;
                 j--;
-            }while(i<j);
-            quicksort(M,left,j);
-            quicksort(M,i,right);
-        }
+            }
+        } while (i < j);
+        quicksort(M, left, j);
+        quicksort(M, i, right);
     }
 
     public static void main(String[] args) {
@@ -42,7 +45,7 @@ public class testquicksort {
         int M[] = new int[n];
         nhapMang(M);
         xuatMang(M);
-        quicksort(M, 0, M.length);
+        quicksort(M, 0, M.length - 1);
         System.out.println();
         System.out.println("mang sau khi sap xep:");
         xuatMang(M);
