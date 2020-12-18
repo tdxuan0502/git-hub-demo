@@ -41,6 +41,7 @@ public class javacode {
         xuatMang(M);
         selectionSort(M);
         System.out.println();
+        System.out.println("mang sau khi sap xep:");
         xuatMang(M);
     }
 }
